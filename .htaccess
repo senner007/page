@@ -1,0 +1,19 @@
+AddType application/x-httpd-php7 php
+#-------------------------
+# Added by Surftown
+# To use php5.3 comment this out
+# AddType application/x-httpd-php52 php52 php
+#-------------------------
+
+
+
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.html [L]
+</IfModule>
+
