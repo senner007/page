@@ -10,26 +10,32 @@
           fluffy: {
             content: 'Fluffy!',
             photo: 'http://placekitten.com/200/200',
-            myElem: 'sdfdsfdsfdsffds'
+            myElem: 'This Fluffy is very fluffy'
           },
           socks: {
             content: 'Socks!',
             photo: 'http://placekitten.com/280/280',
-            myElem: 'sdfdsfdsfsddsddsdsdsffds'
+            myElem: "Socks is my name"
           },
           whiskers: {
             content: 'Whiskers!',
             photo: 'http://placekitten.com/350/350',
-            myElem: 'sffds'
+            myElem: 'This is Whiskers'
           },
           bob: {
             content: 'Just Bob.',
             photo: 'http://placekitten.com/320/270',
-            myElem: 'ds'
+            myElem: "I'm Bob"
           }
         };
+
+// update the page on the first load using the pgp get variable to fretrieve the url
 getPHP = document.getElementById('getPHP')
-console.log(getPHP.textContent)
+
+if (getPHP.textContent == '') {
+  getPHP.textContent = 'whiskers'
+}
+console.log(getPHP)
 updateContent(cats[getPHP.textContent])
 
     // Switcheroo!
@@ -47,7 +53,7 @@ updateContent(cats[getPHP.textContent])
       var cat = event.target.getAttribute('href').split('/').pop(),
           data = cats[cat] || null; // In reality this could be an AJAX request
           console.log(data)
-      updateContent(data);
+        updateContent(data);
 
       // Add an item to the history log
       history.pushState(data, event.target.textContent, event.target.href);

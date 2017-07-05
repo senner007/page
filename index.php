@@ -4,16 +4,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>page</title>
-	<script type="text/javascript" src="page.js"></script>
  <link rel="stylesheet" href="css.css" title="ios">
 
 </head>
 
 <body class="cf">
 	<div id="getPHP"><?php
-  $server = $_GET['p'];
-  echo $server;
-
+ //  only set var if its not empty or 0 in length. E.g when loading the base url
+	if(isset($_GET['p']) && strlen($_GET['p'])>0)
+ 	{
+		//Sanitize the string
+		$server = filter_var($_GET['p'],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+	  echo $server;
+	}
   ?></div>
   <h1>Kittens!</h1>
 
@@ -32,6 +35,7 @@
 
 	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+
 
 </body>
 
