@@ -1,6 +1,3 @@
-
-
-
 // Not the most elegant code but fit enough for this example. Enjoy the kitten goodness!
     var contentEl = document.getElementById('content'),
         photoEl = document.getElementById('photo'),
@@ -31,12 +28,9 @@
 
 // update the page on the first load using the pgp get variable to fretrieve the url
 getPHP = document.getElementById('getPHP')
+updateContent(cats[getPHP.textContent]);
+getPHP.remove();
 
-if (getPHP.textContent == '') {
-  getPHP.textContent = 'whiskers'
-}
-console.log(getPHP)
-updateContent(cats[getPHP.textContent])
 
     // Switcheroo!
     function updateContent(data) {

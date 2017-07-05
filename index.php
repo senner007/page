@@ -15,7 +15,11 @@
  	{
 		//Sanitize the string
 		$server = filter_var($_GET['p'],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
 	  echo $server;
+	}
+	else {
+		echo 'whiskers';
 	}
   ?></div>
   <h1>Kittens!</h1>
